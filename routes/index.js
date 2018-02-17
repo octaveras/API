@@ -7,7 +7,7 @@ var users = require('./users');
 routes.use('/users', users);
 
 
-var requests = require('./words');
+var words = require('./words');
 routes.use('/words', words);
 
 routes.get('/', (req, res) => {

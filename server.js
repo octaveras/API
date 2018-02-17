@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var routes = require('./routes');
 app.use('/', routes);
 
-var port = process.env.PORT || 3306;
+var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });

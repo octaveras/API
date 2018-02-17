@@ -1,0 +1,18 @@
+{
+  "name": "node-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "atom": "^1.1.0",
+    "body-parser": "^1.18.2",
+    "connect": "^3.6.6",
+    "express": "^4.13.4",
+    "inspect": "0.0.2",
+    "moment": "^2.19.4",
+    "moment-timezone": "^0.5.14",
+    "mysql": "^2.15.0"
+  },
+  "engines": {
+    "node": "^4.x.x",
+    "npm": "1.2.x"
+  }
+}

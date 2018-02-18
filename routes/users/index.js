@@ -23,6 +23,6 @@ users.post('/inspire/:user_id/:should_inspire', inspire);
 
 //check if user is in database in current date, sends word if so
 var check = require('./check');
-words.get('/check/:user_id', check);
+users.get('/check/:user_id', check);
 
 module.exports = users;

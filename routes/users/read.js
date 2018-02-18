@@ -16,7 +16,6 @@ module.exports = (request, response) => {
 					return;
 				}
 				if(Object.keys(rows).length) {
-					//console.log(rows[0].id);
 					response.writeHead(200, { 'Content-Type': 'text/plain' });
 					response.write(JSON.stringify(rows[0]));
 					response.end();

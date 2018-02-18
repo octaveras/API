@@ -12,7 +12,6 @@ var database = require('../../db.js');
 		connection.beginTransaction(function(err) {
 			if (err) {
 				console.log("2");
-				//writehead
 				console.log('error: ', err);
 				response.send(false);
 				connection.release();

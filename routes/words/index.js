@@ -13,4 +13,8 @@ words.get('/read/:username', read);
 var create = require('./create');
 words.post('/create/:user_id/:word', create);
 
+//check if word is in database in current date, sends word if so
+var check = require('./check');
+words.get('/check/:user_id', check);
+
 module.exports = words;

@@ -1,5 +1,4 @@
 var database = require('../../db.js');
-
 module.exports = (request, response) => {
 	database.getConnection(function(err, connection) {
 		if (err) {
@@ -8,19 +7,20 @@ module.exports = (request, response) => {
 			connection.release();
 			return;
 		}
-			connection.query('SELECT * from words WHERE word = ?', request.params.username,
+		console.log("connection succeeded");
+		connection.query('SELECT * from users WHERE id= ?', request.params.user_id,
 			function(err, rows) {
 				if (err) {
-					console.log('error: ', err);
 					response.send(false);
 					connection.release();
 					return;
 				}
 				if(Object.keys(rows).length) {
+					//console.log(rows[0].id);
 					response.writeHead(200, { 'Content-Type': 'text/plain' });
 					response.write(JSON.stringify(rows[0]));
-					//response.send(true);
 					response.end();
+
 				}
 				else {
 					response.send(false);

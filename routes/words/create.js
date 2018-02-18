@@ -1,11 +1,5 @@
 var database = require('../../db.js');
 
-
-/*
-    user_id         VARCHAR(255) NOT NULL,
-    word            VARCHAR(50) NOT NULL,
-		*/
-
 module.exports = (request, response) => {
 	database.getConnection(function(err, connection) {
 		if (err) {

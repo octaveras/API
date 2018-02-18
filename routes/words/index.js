@@ -17,4 +17,8 @@ words.post('/create/:user_id/:word', create);
 var check = require('./check');
 words.get('/check/:user_id', check);
 
+//send all words for the week
+var recap = require('./recap');
+words.get('/recap/:user_id', recap);
+
 module.exports = words;

@@ -7,7 +7,6 @@ module.exports = (request, response) => {
 			connection.release();
 			return;
 		}
-		console.log("connection succeeded");
 		connection.query('SELECT * from users WHERE id= ?', request.params.user_id,
 			function(err, rows) {
 				if (err) {

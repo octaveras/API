@@ -9,7 +9,5 @@ var db_config = {
   connectionLimit : 10,
 };
 
-console.log('Running');
-
 var database = mysql.createPool(db_config);
 module.exports = database;

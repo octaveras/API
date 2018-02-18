@@ -20,7 +20,7 @@ var database = require('../../db.js');
 			connection.query(
 				'UPDATE users\
 				 SET `dow` = ?\
-				 WHERE `id` = ?', [request.params.dow, request.params.user_id]
+				 WHERE `id` = ?', [request.params.dow, request.params.user_id],
 			function(err) {
 					if (err) {
 						console.log("3");
@@ -43,7 +43,7 @@ var database = require('../../db.js');
 						response.send(true);
 						connection.end();
 					});
-				});
+			});
 		});
 	});
 };

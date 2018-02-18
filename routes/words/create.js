@@ -22,7 +22,7 @@ module.exports = (request, response) => {
 				return;
 			}
 			connection.query('INSERT INTO words (user_id, word) VALUES' + '(' + request.params.user_id
-			+ "," + request.params.word + ')', 
+			+ "," + request.params.word,
 				function(err) {
 					if (err) {
 						console.log("3 word");

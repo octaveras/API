@@ -1,5 +1,6 @@
 var database = require('../../db.js');
-module.exports = (request, response) => {
+	module.exports = (request, response) => {
+
 	database.getConnection(function(err, connection) {
 		if (err) {
 			console.log("1");
@@ -30,6 +31,7 @@ module.exports = (request, response) => {
 						connection.release();
 						return;
 					}
+					console.log("3 success");
 					connection.commit(function(err) {
 						if (err) {
 							console.log("4");

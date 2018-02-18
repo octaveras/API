@@ -18,12 +18,12 @@ var database = require('../../db.js');
 				return;
 			}
 			connection.query(
-				'INSERT INTO users (`id`, `name`, `dow`, `is_active`, `alarm_time`, `notification_time`, `should_notify`) \
-				VALUES (?, \'nick\', 4, true, \'08:00:00\', \'10:00:00\', false)', [request.params.user_id],
+				'INSERT INTO users (`id`, `name`) \
+				VALUES (?, ?)', [request.params.user_id, request.params.name],
 			function(err) {
 					if (err) {
 						console.log("3");
-						console.log('error: ', err);
+					console.log('error: ', err);
 						response.send(false);
 						connection.rollback();
 						connection.release();
@@ -33,7 +33,7 @@ var database = require('../../db.js');
 					connection.commit(function(err) {
 						if (err) {
 							console.log("4");
-							onsole.log('error: ', err);
+							console.log('error: ', err);
 							response.send(false);
 							connection.rollback();
 							connection.release();

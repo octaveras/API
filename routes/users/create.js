@@ -18,11 +18,10 @@ var database = require('../../db.js');
 				connection.release();
 				return;
 			}
-			connection.query('INSERT INTO users (id, name, dow, is_active, alarm_time, notification_time, should_notify, creation_date) VALUES'
-			+ '(' + request.params.id + "," + request.params.name + "," + request.params.dow + "," +
-			request.params.is_active + "," + request.params.alarm_time + "," + request.params.notification_time
-			+ "," + request.params.should_notify + "," + request.params.creation_date + ')',
-				function(err) {
+			connection.query(
+				'INSERT INTO users (`id`, `name`, `dow`, `is_active`, `alarm_time`, `notification_time`, `should_notify`) \
+				VALUES (?, ?, ?, ?, ?, ?, ?)', [request.params.user_id, request.params.word],
+			function(err) {
 					if (err) {
 						console.log("3");
 						console.log('error: ', err);

@@ -3,14 +3,14 @@ module.exports = (request, response) => {
 	database.getConnection(function(err, connection) {
 		if (err) {
 			console.log('error: ', err);
-			response.send(false);
+			response.send({"response":false});
 			connection.release();
 			return;
 		}
 		connection.query('SELECT * from users WHERE id= ?', request.params.user_id,
 			function(err, rows) {
 				if (err) {
-					response.send(false);
+					response.send({"response":false});
 					connection.release();
 					return;
 				}
@@ -21,7 +21,7 @@ module.exports = (request, response) => {
 
 				}
 				else {
-					response.send(false);
+					response.send({"response":false});
 				}
 			})
 			connection.end();

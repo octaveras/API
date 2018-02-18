@@ -5,12 +5,12 @@ var users = express.Router();
 var all = require('./all');
 users.get('/', all);
 
-// check if user in the database
+// check if word in the database
 var read = require('./read');
 users.get('/read/:username', read);
 
-// register user in the database
+// register words in the database
 var create = require('./create');
-users.post('/create/:username', create);
+users.post('/create/:user_id/:word', create);
 
 module.exports = users;

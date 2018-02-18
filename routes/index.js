@@ -5,6 +5,7 @@ var routes = express.Router();
 
 var users = require('./users');
 routes.use('/users', users);
+console.log("users");
 
 
 var words = require('./words');

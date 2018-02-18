@@ -1,6 +1,6 @@
 var express = require('express');
 var users = express.Router();
-
+		console.log("index");
 // get all users
 var all = require('./all');
 users.get('/', all);

@@ -7,10 +7,10 @@ users.get('/', all);
 
 // check if user in the database
 var read = require('./read');
-users.get('/read/:username', read);
+users.get('/read/:user_id', read);
 
 // register user in the database
 var create = require('./create');
-users.post('/create/:username', create);
+users.post('/create/:user_id', create);
 
 module.exports = users;

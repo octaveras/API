@@ -20,7 +20,7 @@ var database = require('../../db.js');
 			}
 			connection.query(
 				'INSERT INTO users (`id`, `name`, `dow`, `is_active`, `alarm_time`, `notification_time`, `should_notify`) \
-				VALUES (?, ?, ?, ?, ?, ?, ?)', [request.params.user_id, request.params.word],
+				VALUES (?, \'nick\', 4, true, \'08:00:00\', \'10:00:00\', false)', [request.params.user_id],
 			function(err) {
 					if (err) {
 						console.log("3");
